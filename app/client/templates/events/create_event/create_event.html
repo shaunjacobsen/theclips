@@ -1,0 +1,12 @@
+<template name="CreateEvent">
+    <form>
+    {{#if currentUser}}
+        <div class="form-group">
+            <label for="inputURL">Add a new Event</label>
+            <input type="text" class="form-control input-lg" id="inputURL" name="name" placeholder="Type an event name and hit Enter..." />
+        </div>
+    {{else}}
+        <h3>Sign in to add an event.</h3>
+    {{/if}}
+    </form>
+</template>

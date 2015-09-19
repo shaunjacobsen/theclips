@@ -1,0 +1,14 @@
+<template name="ClipsList">
+    {{#each clips}}
+        <h3><a href="{{pathFor 'clipItem'}}">{{headline}}</a> <small>via {{source}}</small></h3>
+        <p><small>Author: {{author}} | Published: {{published}}</small></p>
+        <p><div class="pre-nocrop" id="body">{{body}}</div></p>
+        <button type="button" id="delete" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-remove" aria-hidden="true" ></span> Remove</button>
+        <hr>
+    {{else}}
+        {{#if currentUser}}
+            <h3 class="bg-info">No clips added yet.</h3>
+        {{else}}
+        {{/if}}
+    {{/each}}
+</template>

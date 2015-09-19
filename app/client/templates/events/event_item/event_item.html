@@ -1,0 +1,49 @@
+<template name="EventItem">
+    <div class="row">
+        <div class="col-md-2"><a href="{{pathFor 'events'}}">&lt; Back</a></div>
+        <div class="col-md-10">
+    {{#if get "isEditing"}}
+        <form class="form">
+            <div class="row">
+                <div class="col-md-9">
+                    <input type="text" name="name" value="{{name}}" class="form-control input-lg" />
+                </div>
+                <div class="col-md-3">
+                    <input type="submit" class="btn btn-primary btn-lg" value="Save" />
+                    <a href="{{pathFor 'EventItem'}}" class="btn btn-danger btn-lg">Cancel</a>
+                </div>
+            </div>
+        </form>
+    {{else}}
+  <div class="event-item">
+      <h1>{{name}} {{#if belongsToMe}}<a href="{{pathFor 'Events.Edit'}}" class="btn btn-default btn-xs">Edit</a>{{/if}}</h1>
+  </div>
+    {{/if}}
+            <hr />
+            <a href="#" class="btn btn-success btn-sm">Add Clip</a>
+            <a href="#" class="btn btn-default btn-sm">Rearrange Clips</a>
+            <a href="#" class="btn btn-default btn-sm">Remove all Clips</a>
+            <hr />
+            <div class="row">
+                <div class="col-md-12">
+                    <table class="table table-striped">
+                        <tr>
+                            <th>Title</th>
+                            <th>Source</th>
+                            <th>Published</th>
+                            <th>Actions</th>
+                        </tr>
+                        {{#each clips}}
+                        <tr>
+                            <td><a href="{{pathFor 'clipItem'}}">{{headline}}</a></td>
+                            <td>{{source}}</td>
+                            <td>{{published}}</td>
+                            <td>x</td>
+                        </tr>
+                        {{/each}}
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

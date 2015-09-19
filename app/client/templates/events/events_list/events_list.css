@@ -1,0 +1,15 @@
+/*****************************************************************************/
+/* EventsList: Style */
+/*****************************************************************************/
+.events-list tr {
+    line-height: 30px;
+    min-height: 30px;
+}
+
+.events-list .success {
+    background-color: #CFF09E;
+}
+
+.invisible {
+    visibility: hidden;
+}

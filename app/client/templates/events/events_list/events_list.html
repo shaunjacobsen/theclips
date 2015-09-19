@@ -1,0 +1,23 @@
+<template name="EventsList">
+    <div class="events-list">
+            <h3>Current event: <strong>{{getSession}}</strong></h3>
+        <hr />
+        <table class="table">
+            <tr>
+                <th>Name</th>
+                <th>Added</th>
+                <th>Actions</th>
+            </tr>
+            {{#each events}}
+            <tr id="{{_id}}" class="{{isSessionEvent}}">
+                <td>{{name}}</td>
+                <td>{{formatDate added}} by {{userId}}</td>
+                <td>
+                    <a href="{{pathFor 'EventItem'}}" class="btn btn-xs btn-default">Details</a>
+                    <a href="#" id="set-session" class="btn btn-xs btn-default">Set as active event</a>
+                </td>
+            </tr>
+            {{/each}}
+        </table>
+    </div>
+</template>

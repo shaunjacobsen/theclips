@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "aylien_textapi": {
+      "version": "0.5.0"
+    }
+  }
+}
